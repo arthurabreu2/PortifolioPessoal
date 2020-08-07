@@ -1,34 +1,10 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
-<!--================ Start Header Area =================-->
-<header class="header_area">
-    <div class="main_menu">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="{% url 'index' %}"><img src="{% static 'img/logo2.png' %}" alt=""></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav menu_nav justify-content-end">
-                        <li class="nav-item active"><a class="nav-link" href="{% url 'index' %}">Início</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'projetos' %}">Portfólio</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-</header>
-<!--================ End Header Area =================-->
+{% load static %}
 
+{% include 'partials/menu.html' %}
 <!--================ Start Home Banner Area =================-->
 <section class="home_banner_area">
     <div class="banner_inner">
@@ -39,8 +15,8 @@
                         <h2 class="text-uppercase">Eu sou Arthur!</h2>
                         <h5 class="text-uppercase">Programador Python + Django/Ciência Da Computação</h5>
                         <div class="d-flex align-items-center">
-                            <a class="primary_btn" href="#"><span>Me Contrate!</span></a>
-                            <a class="primary_btn tr-bg" href="#"><span>Veja meu CV</span></a>
+                            <a class="primary_btn" href="https://www.linkedin.com/in/arthur-abreu/"><span>Me Contrate!</span></a>
+                            <a class="primary_btn tr-bg" href="{% static 'img/arthurcv.pdf' %}"><span>Veja meu CV</span></a>
                         </div>
                     </div>
                 </div>
@@ -77,82 +53,15 @@
                     </p>
                     <p>
                         Atualmente sou um Programador Junior à procura de novas oportunidades para mais conhecimento
-                        e experiência na área. Sou calouro na  faculdade de Ciência da Computação na UNICURITIBA.
+                        e experiência na área. Sou calouro na faculdade de Ciência da Computação na UNICURITIBA.
                     </p>
-                    <a class="primary_btn" href="#"><span>Baixar meu CV</span></a>
+                    <a class="primary_btn" href="{% static 'img/arthurcv.pdf' %}"><span>Baixar meu CV</span></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!--================ End About Us Area =================-->
-
-<!--================Start Portfolio Area =================-->
-<section class="portfolio_area" id="portfolio">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="main_title text-left">
-                    <h2>PROJETOS RECENTEMENTE<br>
-                        CONCLUÍDOS</h2>
-                </div>
-            </div>
-        </div>
-        <!--<div class="filters portfolio-filter">
-            <ul>
-                <li class="active" data-filter="*">todos</li>
-                <li data-filter=".popular">populares</li>
-                <li data-filter=".latest"> últimos</li>
-                <li data-filter=".upcoming">em progresso</li>
-            </ul>
-        </div>-->
-
-        <div class="filters-content">
-            <div class="row portfolio-grid justify-content-center">
-
-                <div class="col-lg-4 col-md-6 all latest">
-                    <div class="portfolio_box">
-                        <div class="single_portfolio">
-                            <img class="img-fluid w-100" src="{% static 'img/portfolio/python-logo.png' %}" alt="">
-                            <div class="overlay"></div>
-                            <a href="{% static 'img/portfolio/python-logo.png' %}" class="img-gal">
-                                <div class="icon">
-                                    <span class="lnr lnr-cross"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="short_info">
-                            <h4><a href="{% url 'projeto_detalhes' %}">PROJETO PYTHON #1</a></h4>
-                            <p>Cálculadora de Notas Acadêmicas</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-4 col-md-6 all popular">
-                    <div class="portfolio_box">
-                        <div class="single_portfolio">
-                            <img class="img-fluid w-100" src="{% static 'img/portfolio/django-logo3.png' %}" alt="">
-                            <div class="overlay"></div>
-                            <a href="{% static 'img/portfolio/django-logo3.png' %}" class="img-gal">
-                                <div class="icon">
-                                    <span class="lnr lnr-cross"></span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="short_info">
-                            <h4><a href="{% url 'projeto_detalhes' %}">PROJETO DJANGO #1</a></h4>
-                            <p>Portfólio de Projetos</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        </div>
-    </div>
-</section>
-<!--================End Portfolio Area =================-->
 
 
 <!--================ Start Features Area =================-->
@@ -202,37 +111,6 @@
     </div>
 </section>
 <!--================ End Features Area =================-->
-
-
-<!--================Footer Area =================-->
-<footer class="footer_area">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div class="footer_top flex-column">
-                    <div class="footer_logo">
-                        <a href="#">
-                            <img src="{% static 'img/logo2.png' %}" alt="">
-                        </a>
-                        <h4>Acompanhe minhas mídias sociais</h4>
-                    </div>
-                    <div class="footer_social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row footer_bottom justify-content-center">
-            <p class="col-lg-8 col-sm-12 footer-text">
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-        </div>
-    </div>
-</footer>
-<!--================End Footer Area =================-->
-
+{% include 'partials/footer.html' %}
 {% endblock %}
 
